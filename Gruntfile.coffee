@@ -7,7 +7,6 @@ module.exports = (grunt) ->
   grunt.loadNpmTasks "grunt-sftp-deploy"
   grunt.loadNpmTasks "grunt-contrib-copy"
   grunt.loadNpmTasks 'grunt-contrib-concat'
-  grunt.loadNpmTasks 'grunt-browser-sync'
 
   # Project configuration.
   grunt.initConfig
@@ -78,16 +77,7 @@ module.exports = (grunt) ->
         files: ["src/**/*"]
         tasks: ["slim", "stylus", "concat"]
 
-    browserSync:
-      build:
-          bsFiles:
-            src : 'src/*/**'
-          options:
-            watchTask: true
-            server:
-              host: "localhost"
-              baseDir: "build"
   # Default task(s).
-  grunt.registerTask "default", ["browserSync","watch"]
+  grunt.registerTask "default", ["watch"]
   grunt.registerTask "build", ["slim", "stylus", "concat", 'uglify', "copy"]
   grunt.registerTask "deploy", ["build", "sftp-deploy"]

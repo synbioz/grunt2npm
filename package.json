@@ -4,23 +4,24 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "clean": "rm -rf build/*",
-    "slim": "slimrb src/index.slim > build/index.html",
-    "stylus": "stylus -c src/style.styl -o build/",
-    "concat": "concat-cli -f src/scripts/vendor/jquery.js src/scripts/vendor/jcanvas.min.js src/scripts/vendor/jquery.velocity.min.js src/scripts/vendor/velocity.ui.js src/scripts/script.js -o build/script.js",
-    "minify": "minify --output build/script.min.js build/script.js ",
+    "clean": "rm -rf ./build/*",
+    "slim": "slimrb ./src/index.slim > ./build/index.html",
+    "stylus": "stylus -c ./src/style.styl -o ./build/",
+    "concat": "concat-cli -f ./src/scripts/vendor/jquery.js ./src/scripts/vendor/jcanvas.min.js ./src/scripts/vendor/jquery.velocity.min.js ./src/scripts/vendor/velocity.ui.js ./src/scripts/script.js -o ./build/script.js",
+    "preminify" : "npm run concat",
+    "minify": "minify --output ./build/script.min.js ./build/script.js ",
     "copy": "cp -Rf ./src/images/ ./build/images/ && cp -Rf ./src/contact.php ./build/contact.php",
     "watch": "watch 'npm run build' ./src/",
-    "build": "npm run clean && npm run slim && npm run stylus && npm run concat && npm run minify && npm run copy",
-    "deploy": "dploy"
+    "build": "npm run clean && npm run slim & npm run stylus & npm run minify & npm run copy",
+    "deploy": "npm run build && dploy"
   },
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@bitbucket.org/victordarras/victordarras.fr.git"
+    "url": "git+ssh://git@github.com:synbioz/grunt2npm.git"
   },
   "author": "",
   "license": "ISC",
-  "homepage": "https://bitbucket.org/victordarras/victordarras.fr#readme",
+  "homepage": "https://github.com/synbioz/grunt2npm",
   "devDependencies": {
     "concat-cli": "^4.0.0",
     "dploy": "^1.2.0",

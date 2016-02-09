@@ -4,5 +4,5 @@ server:
   port: 22
   user: "135766"
   path:
-    local: "build/"
+    local: "./build/"
     remote: "/lamp0/web/vhosts/victordarras.fr/htdocs/"
