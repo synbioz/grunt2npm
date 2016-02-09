@@ -1,0 +1,8 @@
+server:
+  scheme: "sftp"
+  host: "sftp.dc0.gpaas.net"
+  port: 22
+  user: "135766"
+  path:
+    local: "build/"
+    remote: "/lamp0/web/vhosts/victordarras.fr/htdocs/"

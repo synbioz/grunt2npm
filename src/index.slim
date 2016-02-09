@@ -1,0 +1,101 @@
+doctype 5
+html lang="fr"
+  head
+    meta charset="UTF-8"
+    title Victor darras
+    meta content="Web and print Designer" name="description"
+    meta name="viewport" content="width=device-width, initial-scale=1.0"
+    link href="style.css" media="screen" rel="stylesheet" type="text/css"
+    link rel="icon" type="image/png" href="favicon.ico"
+    link href='https://fonts.googleapis.com/css?family=Lato:400,300,700,400italic' rel='stylesheet' type='text/css'
+    link href="https://plus.google.com/107738315571674861962/" rel="author"
+
+
+  body.no-js
+    canvas#stars
+    canvas#comet
+    h1 Victor Darras - WebDesigner Intégrateur
+    #content
+      nav.menu
+        a.current href="#hi"
+          h2.hi Hi !
+        a href="#work"
+          h2.work Work ?
+        a href="#me"
+          h2.me Me ?
+        a href="#contact"
+          h2.contact Contact !
+      section.content.hi.current
+        p #{@title}
+        .face-container
+          img src="images/victor.jpg" alt="victor face"
+        p Bonjour je suis Victor Darras, <br/><em>WebDesigner & Intégrateur</em>.
+        p Je travaille actuellement avec <a href="http://synbioz.com" target="_blank">Synbioz</a> où je design des applications web agréables, responsives et élégantes.
+        p Pour mes projets les plus récents vous pouvez faire un tour sur <a href="http://github.com/victordarras" target="_blank">Github</a>. Je partage parfois quelques liens et je garde contact sur <a href="https://plus.google.com/u/1/107738315571674861962" target="_blank">Google+</a>.
+
+      section.content.work
+
+        p
+          | J'écris quelques articles pour le blog de Synbioz,<br/>
+          | sur <a href="http://www.synbioz.com/blog/accessibilite_web_quel_est_le_souci">l'accessibilité web </a>
+          | ou encore sur des outils que j'affectionne comme <a href="http://www.synbioz.com/blog/pourquoi_passer_a_sketch">Sketch</a>.
+        p Vous trouverez quelques visuels sur mon <a href="https://dribbble.com/victordarras">profil Dribbble</a> (rarement mis à jour).
+        hr/
+        p
+          | <a href="http://www.synbioz.com/blog/authors/vdarras">Toutes mes contributions au blog de Synbioz.</a>
+        ul.blog
+
+      section.content.me
+        dl
+          dt Expériences :
+          dd
+            | Synbioz | Web Designer
+            span.date 2013
+          dd
+            | Décathlon | Web & Print Designer
+            span.date 2011 - 2012
+          dd
+            | M-Agency | Graphic Designer
+            span.date August 2009/2010/2011
+          dd
+            | Winnord | Web Designer
+            span.date 2010 - 2011
+        dl
+          dt Diplômes
+          dd
+            | BTS
+            abbr<> title="Design Communication Espace Volume" DCEV
+            | ESAAT Roubaix
+            span.date 2011
+          dd
+            | Baccalaureat STI Arts Appliqués | Loos
+            span.date 2011 - 2012
+        dl
+          dt WebDesign & Intégration
+          dd UI/UX, Communication visuelle
+          dd HTML5 & CSS3 (et adepte des préprocesseurs)
+          dd Javascript & jQuery
+        dl
+          dt Software
+          dd SublimeText, Git, iTerm
+          dd <a href="http://www.bohemiancoding.com/sketch/">Sketch</a>, Adobe Photoshop, Illustrator & Indesign
+          dd 3DSmax for some rendering
+        dl
+          dt je suis aussi musicien
+          dd Je joue avec les <a href="http://hillhiddenhounds.com">Hill Hidden Hounds</a> et <a href="http://paramedicsss.com">Paramedicsss</a>.
+
+      section.content.contact
+        form#formulaire.js-form action="contact.php" method="post"
+          label for="regularInput" Adresse email
+          input#regularInput.js-input data-required="" name="email" required="" type="email"
+          label for="regularTextarea" Votre message
+          textarea#regularTextarea.js-input data-required="" name="message" required=""
+          button type="submit" Envoyer
+          p.alert style="display:none;"
+
+    /[if lt IE 9]
+      script src='http://html5shiv.googlecode.com/svn/trunk/html5.js'
+      script src='https://css3-mediaqueries-js.googlecode.com/files/css3-mediaqueries.js'
+    script src="script.min.js" async="" defer=""
+
+

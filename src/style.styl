@@ -1,0 +1,334 @@
+// @import url(http://fonts.googleapis.com/css?family=Lato:300,400,700,400italic)
+softyellow = rgb(255, 232, 122, 1)
+yellow = rgb(255, 202, 83, 1)
+orange = rgb(255, 137, 59, 1)
+red = rgb(229, 39, 56, 1)
+blue = rgb(30, 170, 152, 1)
+content-background = rgba(255,255,255,0.95)
+font = "Open sans", 'Arial', serif
+titleFont = font
+fontcolor = #333
+avatarSize = 120px
+
+rounded-corners(radius)
+  -moz-border-radius radius
+  -webkit-border-radius radius
+  -o-border-radius radius
+  -ms-border-radius radius
+  border-radius radius
+
+transition(effect=all, time=0.1s)
+  -moz-transition effect time
+  -webkit-transition effect time
+  -o-transition effect time
+  -ms-transition effect time
+  transition effect time
+
+.transition
+  transition()
+
+background-linear-gradient(startPoint, startColor, startInterval, endColor, endInterval)
+  background-color startColor
+  background-image -webkit-linear-gradient(startPoint, startColor startInterval, endColor endInterval)
+  background-image -moz-linear-gradient(startPoint, startColor startInterval, endColor endInterval)
+  background-image -ms-linear-gradient(startPoint, startColor startInterval, endColor endInterval)
+  background-image -o-linear-gradient(startPoint, startColor startInterval, endColor endInterval)
+  background-image linear-gradient(startPoint, startColor startInterval, endColor endInterval)
+
+body.no-js
+  .content
+    display block
+    position static
+    box-shadow inset 0 0 0 1px #DDD
+  .menu
+    background #121C24
+    box-shadow 0 0 30px rgba(0, 0, 0, 0.5)
+
+*
+  margin 0px
+  padding 0px
+  text-decoration none
+  border none
+  outline-color yellow
+
+p, ul, li, ol, span, strong, em, dl, dt, dd
+  font-family font
+  font-weight normal
+  color fontcolor
+  line-height 140%
+  letter-spacing 0
+p
+  margin 5px 0 10px
+  display block
+em
+  font-family titleFont
+  font-weight 400
+h3, h4, h5, h6
+  font-family font
+  margin 20px 0 10px 0
+  font-weight 600
+  color #3A3A3A
+  font-style italic
+  color rgba(0, 0, 0, 0.5)
+h3
+  font-size 22px
+h4, dt
+  font-size 20px
+h5
+  font-size 18px
+h6
+  font-size 26px
+a
+  color blue
+  font-weight 500
+  @extend .transition
+a:hover
+  color orange
+dl, dt, dd
+  line-height: 1.5em
+dl
+  margin-bottom 1em
+abbr
+  border-bottom 1px dotted fontcolor
+
+
+
+
+
+#stars
+  position: fixed
+  top: 0
+  left: 0
+  z-index: -1
+  background-linear-gradient(top, #131224, 0%, lighten(#131224,7), 100%)
+  background-attachment fixed
+#comet
+  position: fixed
+  top: 0
+  left: 0
+  z-index: -1
+  background: none
+
+#content
+  margin auto
+  max-width 640px
+  position relative
+  box-sizing border-box
+  margin-top 64px
+body
+  background #121C24
+  width 100%
+  padding 0
+  padding-bottom 4em
+  font-size 16px
+  margin auto
+  box-sizing border-box
+h1
+  display none
+  color: #fff
+hr
+  border-top: 1px dashed #ddd
+  margin: 2em 0
+.menu
+  margin auto
+  max-width 640px
+  position fixed
+  top 0
+  right 0
+  left 0
+  z-index 1
+  h2
+    display inline-block
+    padding 0.5em 0.6em
+    width 25%
+    margin 0
+    cursor pointer
+    text-align center
+    font-family titleFont
+    text-transform capitalize
+    font-weight 300
+    white-space nowrap
+    color #fff
+    color rgba(255,255,255,0.9)
+    //background content-background
+    border-bottom 4px solid rgba(255,255,255,0.15)
+    -webkit-box-sizing border-box
+    -moz-box-sizing border-box
+    -ms-box-sizing border-box
+    box-sizing border-box
+    transition(all, 0.2s)
+  a
+    &.current,
+    &:hover
+      h2
+        color: #fff
+        box-shadow none
+      .hi
+        border-color yellow
+      .work
+        border-color blue
+      .me
+        border-color orange
+      .contact
+        border-color red
+
+
+.content
+  position absolute
+  top 0
+  left 0
+  right 0
+  z-index: 1
+  background content-background
+  padding 2em
+  margin 0 auto 64px
+  border 5px solid rgba(255,255,255,0.7)
+  box-shadow inset 0 0 0 1px #DDD, 0 0 30px rgba(0, 0, 0, 0.5)
+  display: none
+  &:after
+    content ''
+    display table
+    clear both
+  &.current
+      display: block
+
+.hi
+  &.content
+    padding 3em
+  .face-container
+    float right
+    margin 20px 0 20px 20px
+    width 120px
+    height 120px
+    border-radius 50%
+    overflow hidden
+    border 2px solid #fff
+    box-shadow 0 0 0 1px #ddd, 0 1px 1px #999
+    img
+      width 100%
+      height auto
+  p
+    margin 1.5em auto
+.me
+  &.content
+    padding 3em
+  .date
+    font-weight normal
+    display inline
+    padding 1px 4px
+    margin 0 0.4em
+    font-size 12px
+    font-family sans-serif
+    background rgba(0, 0, 0, 0.05)
+    border-radius 2px
+    border-top 1px solid rgba(0, 0, 0, 0.06)
+  .third
+    width 33.3333%
+    min-width 500px
+    padding 1em
+    vertical-align top
+    display inline-block
+    text-align left
+    box-sizing border-box
+  dt
+    margin-bottom 0.5em
+    font-weight 600
+.contact
+  form
+    box-sizing border-box
+    width 100%
+    max-width 400px
+    text-align left
+    padding 2em 0
+    margin auto
+    label, input, textarea, select
+      box-sizing border-box
+      display block
+      margin 0 0 10px 0
+      font-family font
+      width 100%
+      outline none
+      rounded-corners(5px)
+      transition(all, 0.3s)
+    label
+      color #999
+      line-height 2em
+      padding-left 0.5em
+      opacity 1
+      margin-bottom 0
+    [type=email]
+      font-size 1em
+      padding 1em
+      margin-bottom 1em
+      border 1px solid #ddd
+      background #fff
+      &:focus
+        border-color red
+    textarea
+      height 10em
+      font-family titleFont
+      font-size 1em
+      padding 1em
+      margin-bottom 1em
+      border 1px solid #ddd
+      background #fff
+      &:focus
+        border-color red
+    button
+      display inline-block
+      float right
+      padding: 0.4em 1em
+      background-color red
+      font-size 1em
+      font-family titleFont
+      font-weight 500
+      color #fff
+      box-shadow 0 2px 0 #910
+      cursor pointer
+      text-shadow 0 1px 1px darken(red, 30%)
+      rounded-corners(3px)
+      transition(background, 0.1s)
+    button:hover
+      background-color darken(red, 5%)
+      transition(box-shadow, 0.1s)
+    button:active
+      box-shadow 0 3px 0 transparent
+  .work
+    text-align center
+
+.blog
+  list-style-type none
+  padding 0
+  margin 1em 0 0
+  text-align left
+  li
+    line-height 1.4em
+    &:hover .date
+      color grey
+  .date
+    font-size 0.75em
+    color silver
+    float right
+    transition all 0.1s
+  p.thumb
+    font-size 0.75em
+    color grey
+    margin-bottom 1.4em
+
+
+@media only screen and (max-width: 800px)
+  body
+    padding-bottom 0
+  .hide-on-mobile
+    display none
+  .menu h2
+    font-size 1em
+    font-weight normal
+  #content
+    margin-top: 45px
+    .content
+      padding: 2em
+  .hi .face-container
+    margin: 0 auto 30px
+    float: none
+

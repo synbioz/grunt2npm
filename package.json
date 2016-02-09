@@ -1,0 +1,31 @@
+{
+  "name": "grunt2npm",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "clean": "rm -rf build/*",
+    "slim": "slimrb src/index.slim > build/index.html",
+    "stylus": "stylus -c src/style.styl -o build/",
+    "concat": "concat-cli -f src/scripts/vendor/jquery.js src/scripts/vendor/jcanvas.min.js src/scripts/vendor/jquery.velocity.min.js src/scripts/vendor/velocity.ui.js src/scripts/script.js -o build/script.js",
+    "minify": "minify --output build/script.min.js build/script.js ",
+    "copy": "cp -Rf ./src/images/ ./build/images/ && cp -Rf ./src/contact.php ./build/contact.php",
+    "watch": "watch 'npm run build' ./src/",
+    "build": "npm run clean && npm run slim && npm run stylus && npm run concat && npm run minify && npm run copy",
+    "deploy": "dploy"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@bitbucket.org/victordarras/victordarras.fr.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "homepage": "https://bitbucket.org/victordarras/victordarras.fr#readme",
+  "devDependencies": {
+    "concat-cli": "^4.0.0",
+    "dploy": "^1.2.0",
+    "minifier": "^0.7.1",
+    "stylus": "^0.53.0",
+    "watch": "^0.17.1"
+  }
+}
