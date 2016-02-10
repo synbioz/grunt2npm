@@ -98,7 +98,7 @@ var loadArticles = function() {
     formatedArticles = "";
 
   $.ajax({
-    url:"https://www.kimonolabs.com/api/8b32r1qc?apikey=xAFDxTdoVMt3LIJlIWH3BEPEAfHsUMGP",
+    url:"https://www.kimonolabs.com/api/8b32r1qc?apikey=00000000000000000000000000000000",
     crossDomain: true,
     dataType: "jsonp",
     success: function (response) {

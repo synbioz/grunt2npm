@@ -1,5 +1,5 @@
 <?php
-     $to      = 'contact@victordarras.fr';
+     $to      = '';
      $subject = 'Mail de mon site :';
      $message = $_POST['message'];
      $email   = $_POST['email'];
